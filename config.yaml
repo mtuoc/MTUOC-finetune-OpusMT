@@ -1,0 +1,30 @@
+train_src_file: train.en
+train_tgt_file: train.es
+val_src_file: val.en
+val_tgt_file: val.es
+
+model_name: opus-mt-en-es
+#a local dir or a model to download (Helsinki-NLP/opus-mt-en-es)
+max_length: 128
+# Define the maximum sentence length
+
+output_dir: "./finetunedmodel"
+eval_strategy: epoch
+save_strategy: epoch
+per_device_train_batch_size: 16
+per_device_eval_batch_size: 16
+num_train_epochs: 3
+weight_decay: 0.01
+#save_steps: 500
+#save_total_limit: 3
+logging_dir: './logs'
+logging_steps: 500
+load_best_model_at_end: True
+# Load the best model when finished training
+metric_for_best_model: eval_loss
+# Specify the metric to use for early stopping
+
+patience: 3
+
+output_model_name: fine-tuned-opus-mt
+output_tokenizer_name: fine-tuned-opus-mt
