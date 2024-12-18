@@ -1,14 +1,17 @@
-train_src_file: train.en
-train_tgt_file: train.es
-val_src_file: val.en
-val_tgt_file: val.es
+train_src_file: train.fr
+train_tgt_file: train.ca
+val_src_file: val.fr
+val_tgt_file: val.ca
 
-model_name: opus-mt-en-es
+model_name: Helsinki-NLP/opus-mt-fr-ca
 #a local dir or a model to download (Helsinki-NLP/opus-mt-en-es)
 max_length: 128
 # Define the maximum sentence length
 
 output_dir: "./finetunedmodel"
+gpu_log_file: GPU_consumption.log
+
+
 eval_strategy: epoch
 save_strategy: epoch
 per_device_train_batch_size: 16
@@ -26,5 +29,5 @@ metric_for_best_model: eval_loss
 
 patience: 3
 
-output_model_name: fine-tuned-opus-mt
-output_tokenizer_name: fine-tuned-opus-mt
+output_model_name: fine-tuned-opus-mt-fr-ca
+output_tokenizer_name: fine-tuned-opus-mt-fr-ca
